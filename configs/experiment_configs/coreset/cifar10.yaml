@@ -55,10 +55,8 @@ parameters:
   patience:
     value: 20
   min_probability:
-    # values: [1e-3, 1e-4]
-    values: [0.1, 0.5, 1, 1.5, 2, 4, 5]
+    values: [1e-3, 1e-4]
   clamp_method:
-    # values: ["clamp", "smooth"]
-    value: "clip"
+    values: ["clamp", "smooth"]
   clamping:
     value: True

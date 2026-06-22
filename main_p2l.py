@@ -17,9 +17,7 @@ import argparse
 import wandb
 import numpy as np
 from copy import deepcopy
-
 import yaml
-from functools import partial
 
 CUDA_DEVICE = 0
 

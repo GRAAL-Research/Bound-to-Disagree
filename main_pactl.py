@@ -11,7 +11,6 @@ import os
 import json
 import argparse
 import wandb
-from functools import partial
 import yaml
 from copy import deepcopy
 import loralib as lora

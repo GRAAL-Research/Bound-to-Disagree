@@ -12,6 +12,10 @@ parameters:
     value: 0.0
   pretraining_epochs:
     value: None
+  max_epochs: 
+    value: 2
+  batch_size: 
+    value: 16
   pretraining_lr:
     value: None
 
@@ -27,7 +31,7 @@ parameters:
   lr_scheduler:
     value: "onecycle"
   training_lr:
-    values: [2e-5] #[2e-5, 1e-6]
+    values: [2e-5]
   momentum:
     value: 0.9
   nesterov:

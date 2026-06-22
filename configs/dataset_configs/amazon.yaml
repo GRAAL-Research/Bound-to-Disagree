@@ -5,8 +5,6 @@ first_class: None
 second_class: None
 validation_size: 0.1
 disagreement_size: 0.85
-# max_epochs: 2
-# batch_size: 16
 
 # bound parameters
 delta: 0.01

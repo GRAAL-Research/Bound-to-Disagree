@@ -12,6 +12,8 @@ parameters:
     value: 0
   pretraining_epochs:
     value: 2
+  max_epochs: 
+    value: 2
   pretraining_lr:
     value: 2e-5
 
