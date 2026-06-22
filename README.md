@@ -1,8 +1,28 @@
 # New generalization bounds for deep learning via disagreement
 
-This is the repository associated to the paper : 
+This is the repository associated to the UAI 2026 paper : 
 
 **Bound to Disagree: Generalization Bounds via Certifiable Surrogates**
+
+## Citation information
+If you use our code, please cite our paper : 
+
+```
+Bazinet, M., Zantedeschi, V., & Germain, P. (2026). Bound to Disagree : Generalization Bounds via Certifiable Surrogates. In The Forty-Second Annual Conference on Uncertainty in Artificial Intelligence.
+```
+
+```
+@inproceedings{bazinet2026bound,
+title={Bound to Disagree : Generalization Bounds via Certifiable Surrogates},
+author={Mathieu Bazinet and Valentina Zantedeschi and Pascal Germain},
+booktitle={Forty-Second Annual Conference on Uncertainty in Artificial Intelligence},
+year={2026},
+url={https://openreview.net/forum?id=CZeG5HW1Y5}
+}
+```
+
+
+## Running the code
 
 To clone the repository, please use the following command :  
 `git clone --recurse-submodules https://github.com/GRAAL-Research/Bound-to-Disagree.git`
@@ -16,6 +36,8 @@ To run the experiments, please use the following commands :
 - Model compression : `python main_pactl.py -d <dataset-name>`
 - PAC-Bayes : `python main_pbb.py -d <dataset-name>`
 - Quantization : `python main_quantization.py -d <dataset-name>`
+
+The code for the plots can be found in `result_plots`. 
 
 ## Python installations
 The experiments were run on three different devices. The target neural networks, the experiments with Pick-To-Learn and the quantization experiments were computed on a computer with Python 3.12.3 and a NVIDIA GeForce RTX 4090. The coreset experiments and the model compression experiments were computed with Python 3.12.4 and a NVidia H100 SXM5. Finally, the PAC-Bayesian experiments and the model distillation experiments were computed with Python 3.12.4 and a NVidia A100 SXM4.
