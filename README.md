@@ -5,7 +5,7 @@ This is the repository associated to the paper :
 **Bound to Disagree: Generalization Bounds via Certifiable Surrogates**
 
 To clone the repository, please use the following command :  
-`git clone --recurse-submodules <url-of-the-repo>`
+`git clone --recurse-submodules https://github.com/GRAAL-Research/Bound-to-Disagree.git`
 
 We build our code base on the DeepCore library [1], the PACTL library [2] and PBB library [3], which we add as submodules.
 
