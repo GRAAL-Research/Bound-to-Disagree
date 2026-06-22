@@ -1,0 +1,59 @@
+name: sweep
+method: grid
+metric:
+  goal: minimize
+  name: kl_bound
+  
+parameters:
+  seed:
+    values: [1, 2, 3, 4, 42]
+  # pretraining details
+  prior_size:
+    value: 0.0
+  pretraining_epochs:
+    value: None
+  pretraining_lr:
+    value: None
+
+  # training details
+  model_type:
+    value : "cnn"
+  dropout_probability:
+    values: [0.2, 0.5]
+  selection_epochs:
+    value: 40
+  selection:
+    values: ['Uniform', 'kCenterGreedy', 'Forgetting',  'DeepFool']
+  fraction:
+    values: [0.001, 0.005,0.01, 0.05, 0.1, 0.15,0.2]
+  submodular:
+    value: "GraphCut"
+  submodular_greedy:
+    value: "LazyGreedy"
+  uncertainty:
+    value: "Margin"
+
+  # optimizer
+  optimizer:
+    values: ["Adam", "adamfree"]
+  lr_scheduler:
+    value: None
+  training_lr:
+    values: [1e-3, 1e-4]
+  momentum:
+    value: None
+  nesterov:
+    value: False
+  weight_decay:
+    values : [0.01, 0.1]
+
+  # p2l params
+  min_probability:
+    # values: [1e-3, 1e-4, 1e-5]
+    values: [0.1, 0.5, 1, 1.5, 2, 4, 5]
+  clamp_method:
+    # values: ["clamp", "smooth"]
+    value: "clip"
+  clamping:
+    value: True
+

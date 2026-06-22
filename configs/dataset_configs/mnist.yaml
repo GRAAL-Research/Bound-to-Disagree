@@ -1,0 +1,22 @@
+dataset: "mnist"
+regression: False
+n_classes: 10
+first_class: None 
+second_class: None
+validation_size: 0.1
+disagreement_size: 0.2
+max_epochs: 200
+batch_size: 64
+
+# bound parameters
+delta: 0.005
+nbr_parameter_bounds: 20
+classic_bounds: True
+p2l_bounds: True
+real_bounds: True
+
+# miscellaneous
+log_iterations: 5
+deterministic: True
+early_stopping: False
+early_stopping_patience: 20

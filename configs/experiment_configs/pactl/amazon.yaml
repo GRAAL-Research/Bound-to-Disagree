@@ -1,0 +1,84 @@
+name: sweep
+method: grid
+metric:
+  goal: minimize
+  name: kl_bound
+  
+parameters:
+  seed:
+    values: [1, 2, 3, 4, 42]
+  # pretraining details
+  prior_size:
+    value: 0.0
+  pretraining_epochs:
+    value: 2
+  pretraining_lr:
+    value: 2e-5
+
+  # training details
+  model_type:
+    values: ['DistilBERT', 'GPT2']
+  dropout_probability:
+    value: 0
+  max_epochs:
+    value: 5
+
+  # optimizer
+  optimizer:
+    value: "Adam"
+  lr_scheduler:
+    value: None
+  training_lr:
+    value: 1e-6
+  momentum:
+    value: 0.9
+  nesterov:
+    value: None
+  weight_decay:
+    value: 0.01
+  batch_size:
+    value: 64
+  batch_size_val:
+    value: 1024
+
+  # p2l params
+  patience:
+    value: 20
+  min_probability:
+    value: 1e-3
+  clamp_method:
+    value: None
+  clamping:
+    value: False
+  n_shards:
+    value: 1
+  frozen_layer:
+    value: 3
+    if:
+      elem: "model_type"
+      op: "=="
+      val: 'DistilBERT'
+      else: 6
+  intrinsic_mode:
+    value: "dense"
+  intrinsic_dim:
+    values: [5000, 10000]
+  levels:
+    value: 250
+  quant_epochs:
+    value: 20
+  quantized_lr:
+    value: 1.0e-2
+    if:
+      elem: "model_type"
+      op: "=="
+      val: 'DistilBERT'
+      else: 1.0e-4
+  use_kmeans:
+    value: True
+  rank:
+    value: 4
+  lora_alpha:
+    value: 1
+  distillation:
+    value: True

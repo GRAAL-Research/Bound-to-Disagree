@@ -1,0 +1,64 @@
+name: sweep
+method: grid
+metric:
+  goal: minimize
+  name: kl_bound
+  
+parameters:
+  seed:
+    values: [1, 2, 3, 4, 42]
+  # pretraining details
+  prior_size:
+    value: 0.2
+  pretraining_epochs:
+    value: 100
+  pretraining_lr:
+    value: 0.001
+
+  # training details
+  model_type:
+    value : "cnn"
+  dropout_probability:
+    value: 0.0
+
+  # optimizer
+  optimizer:
+    value: "adamfree"
+  lr_scheduler:
+    value: None
+  training_lr:
+    values: [1e-2, 1e-4]
+  momentum:
+    value: None
+  nesterov:
+    value: None
+  weight_decay:
+    value : 0.1
+
+  # p2l params
+  max_compression_size:
+    value: 10000
+  data_groupsize: 
+    value: 1
+  patience:
+    value: 3
+  min_probability:
+    value: 1e-3
+  clamp_method:
+    value: "smooth"
+  clamping:
+    value: True
+  intrinsic_mode:
+    value: "dense"
+  intrinsic_dim:
+    values: [100, 500, 1000]
+  levels:
+    values: [5, 20]
+  quant_epochs:
+    value: 20
+  use_kmeans:
+    value: True
+  rank:
+    values: [0, 2, 4]
+  lora_alpha:
+    value: 1

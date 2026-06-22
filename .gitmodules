@@ -1,0 +1,9 @@
+[submodule "DeepCore"]
+	path = DeepCore
+	url = https://github.com/PatrickZH/DeepCore.git
+[submodule "tight-pac-bayes"]
+	path = Pactl
+	url = https://github.com/activatedgeek/tight-pac-bayes.git
+[submodule "PBB"]
+	path = PBB
+	url = https://github.com/mperezortiz/PBB.git
