@@ -53,7 +53,7 @@ class ClippedCrossEntropyLoss(torch.nn.Module):
             else:
                 new_input[i] = input[i]
 
-        return self.loss(input, target)
+        return self.loss(new_input, target)
 
 class ClassificationModel(L.LightningModule):
     def __init__(self, model, optimizer="Adam", lr=1e-3, momentum=0.95, batch_size=64, pmin=1e-5, clamp_method=None,

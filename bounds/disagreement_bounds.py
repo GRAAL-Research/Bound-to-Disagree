@@ -82,8 +82,8 @@ def compute_disagreement_bounds(disagreement, loss_disagreement, softmax_disagre
     elif config['clamp_method'] == "clip":
         n_classes = config['n_classes']
         pmin = config['min_probability']
-        max_val_loss = np.log(1+(n_classes-1)*np.exp(pmin * np.sqrt(n_classes/(n_classes-1)))) 
-        min_val_loss = 0.0
+        max_val_loss = np.log(1+(n_classes-1)*np.exp(pmin)) 
+        min_val_loss = np.log(1+(n_classes-1)*np.exp(-pmin)) 
 
         loss = (loss_disagreement - min_val_loss)/ (max_val_loss - min_val_loss) / disagreement_set_size
         information_dict['disagreement_loss_kl'] = (max_val_loss - min_val_loss) * kl_inv(loss, epsilon , "MAX") + min_val_loss

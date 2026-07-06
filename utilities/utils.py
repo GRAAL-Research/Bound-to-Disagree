@@ -162,8 +162,8 @@ def get_min_max_loss(min_probability, n_classes, clamp_method, huber_delta=None)
         assert min_val < max_val
         return min_val, max_val
     elif clamp_method == "clip":
-        max_val = np.log(1+(n_classes-1)*np.exp(min_probability * np.sqrt(n_classes/(n_classes-1)))) 
-        min_val = 0.0
+        max_val = np.log(1+(n_classes-1)*np.exp(min_probability)) 
+        min_val = np.log(1+(n_classes-1)*np.exp(-min_probability)) 
         assert min_val < max_val
         return min_val, max_val
     elif clamp_method is None:
